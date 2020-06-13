@@ -1,0 +1,18 @@
+.avatar {
+  display: flex;
+  flex-direction: row;
+
+  .img {
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+  }
+
+  .name {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(172, 172, 172, 1);
+    line-height: 41px;
+    padding-left: 11px;
+  }
+}

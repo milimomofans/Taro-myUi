@@ -1,0 +1,61 @@
+.activity-item {
+  padding: 22px 33px;
+  display: flex;
+  flex-direction: row;
+
+  .img {
+    width: 168px;
+    height: 168px;
+    border-radius: 11px;
+  }
+
+  .content {
+    padding-left: 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .tittle {
+      font-size: 30px;
+      font-weight: 500;
+      color: rgba(13, 13, 13, 1);
+      line-height: 41px;
+    }
+
+    .tags {
+      display: flex;
+      flex-direction: row;
+
+      .tag {
+        margin-right: 9px;
+        padding: 4px 11px;
+        box-sizing: border-box;
+        height: 47px;
+        line-height: 39px;
+        background-color: rgba(72, 209, 150, 0.12);
+        border-radius: 6px;
+        color: rgba(47, 203, 136, 1);
+      }
+    }
+
+    .price {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .price {
+        font-size: 34px;
+        font-weight: 600;
+        color: rgba(255, 85, 103, 1);
+        line-height: 47px;
+      }
+
+      .apply-number {
+        font-weight: 400;
+        color: rgba(96, 96, 96, 1);
+        line-height: 32px;
+      }
+    }
+  }
+}

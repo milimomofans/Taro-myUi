@@ -1,0 +1,45 @@
+.login-button-component-wrapper {
+  margin-top: -36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .login-button-component-item {
+    padding: 0;
+    margin: 36px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 590px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(72, 209, 150, 1) 0%, rgba(0, 203, 116, 1) 100%);
+    border-radius: 50px;
+    border: none;
+
+    .login-button-component-icon {
+      width: 40px;
+      height: 32px;
+    }
+
+    .login-button-component-text {
+      margin-left: 16px;
+      color: #FEFFFF;
+      font-size: 36px;
+      line-height: 50px;
+    }
+
+    &.phone {
+      border: 1px solid rgba(0, 203, 116, 1);
+      background: #fff;
+
+      .login-button-component-icon {
+        width: 28px;
+        height: 40px;
+      }
+
+      .login-button-component-text {
+        color: #2FCB88;
+      }
+    }
+  }
+}

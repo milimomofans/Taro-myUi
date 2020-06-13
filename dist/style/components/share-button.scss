@@ -1,0 +1,107 @@
+.poster {
+  .content-share {
+    position: fixed;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 100vh;
+
+    .share {
+      position: absolute;
+      background-color: #fff;
+      bottom: 100px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      height: 280px;
+      align-items: center;
+
+      .weixin {
+        flex: 1;
+        text-align: center;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: none;
+
+        .image {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .weixin::after {
+        border: none;
+      }
+
+      .friend {
+        flex: 1;
+        text-align: center;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: none;
+
+        .image {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .friend::after {
+        border: none;
+      }
+    }
+
+    .button {
+      position: fixed;
+      height: 100px;
+      width: 100%;
+      bottom: 0;
+      border-radius: 0;
+      background-color: #fff;
+      text-align: center;
+    }
+  }
+
+  .content-poster {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+
+    .poster {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      width: 100%;
+      height: 1008px;
+    }
+
+    .share {
+      position: fixed;
+      width: 100%;
+      height: 80px;
+      bottom: 50px;
+
+      .share-button {
+        background-color: rgba(0, 0, 0, 0);
+        width: 289px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        color: #d6b887;
+        border-radius: 45px;
+        border: 2px solid rgba(214, 184, 135, 1);
+      }
+    }
+  }
+}

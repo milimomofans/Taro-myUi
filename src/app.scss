@@ -1,0 +1,8 @@
+@import './style/index.scss';
+@import "~taro-ui/dist/style/components/float-layout.scss";
+@import "~taro-ui/dist/style/components/activity-indicator.scss";
+@import '~taro-ui/dist/style/components/loading.scss';
+
+.at-loading__ring {
+  border-color: #1bbc9c transparent transparent transparent;
+}

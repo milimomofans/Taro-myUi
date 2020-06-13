@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WtLoginBtn Snap render initial WtLoginBtn 1`] = `"<div class=\\"login-btn-container\\"><button class=\\"login-btn \\" open-type=\\"getPhoneNumber\\">undefined<div class=\\"test\\">登陆成功</div></button></div>"`;
+
+exports[`WtLoginBtn Snap render success WtLoginBtn 1`] = `"<div class=\\"login-btn-container\\"><button class=\\"login-btn \\">undefined<div class=\\"test\\">登陆成功</div></button></div>"`;

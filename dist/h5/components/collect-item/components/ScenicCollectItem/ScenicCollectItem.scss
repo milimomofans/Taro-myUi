@@ -1,0 +1,27 @@
+.scenic-item {
+  height: 213px;
+  box-sizing: border-box;
+  padding: 22px 33px;
+  display: flex;
+  flex-direction: row;
+
+  .content {
+    padding-left: 22px;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .tiltle {
+      flex: 1;
+    }
+
+    .tags {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

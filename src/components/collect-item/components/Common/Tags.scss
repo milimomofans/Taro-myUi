@@ -1,0 +1,15 @@
+.tags {
+  display: flex;
+  flex-direction: row;
+
+  .tag {
+    margin-right: 9px;
+    padding: 4px 11px;
+    box-sizing: border-box;
+    height: 47px;
+    line-height: 39px;
+    background-color: rgba(72, 209, 150, 0.12);
+    border-radius: 6px;
+    color: rgba(47, 203, 136, 1);
+  }
+}

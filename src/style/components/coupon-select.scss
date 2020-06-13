@@ -1,0 +1,12 @@
+// @import "~taro-ui/dist/style/components/float-layout.scss";
+// 依赖优惠券列表组件样式+为空提示组件样式
+@import "./coupon-list.scss";
+@import "./empty.scss";
+
+.coupon-select-container {
+  width: 100%;
+
+  .at-float-layout .layout-header__title {
+    text-align: center !important;
+  }
+}

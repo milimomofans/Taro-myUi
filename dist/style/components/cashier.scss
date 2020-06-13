@@ -1,0 +1,234 @@
+.cashier-wrapper {
+  height: 100vh;
+}
+
+.cashier-success-wrapper {
+  min-height: 100%;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  background-color: #fff;
+
+  .cashier-success-top {
+    height: 96px;
+    background-color: #00CB74;
+  }
+
+  .cashier-success-main {
+    margin-top: -32px;
+    padding: 0 36px;
+    background-color: #fff;
+    border-radius: 24px 24px 0 0;
+    z-index: 10;
+
+    .cashier-success-main-status {
+      padding-bottom: 66px;
+      border-bottom: 1px solid #D8D8D8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .cashier-success-icon {
+        margin-top: -59px;
+        width: 128px;
+        height: 128px;
+      }
+
+      .cashier-success-title {
+        margin-top: 22px;
+        margin-bottom: 34px;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 42px;
+        text-align: center;
+      }
+
+      .cashier-success-amount {
+        color: #0D0D0D;
+        font-size: 80px;
+        line-height: 80px;
+        font-weight: bold;
+
+        .cashier-success-mark {
+          font-size: 32px;
+          line-height: 32px;
+        }
+      }
+    }
+
+    .cashier-success-main-coupon {
+      padding-top: 78px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .cashier-success-main-coupon-title {
+        color: #0D0D0D;
+        font-size: 36px;
+        line-height: 50px;
+        font-weight: bold;
+      }
+
+      .cashier-success-coupon-wrapper {
+        margin-top: 36px;
+      }
+
+      .cashier-success-alter-text {
+        margin-top: 36px;
+        color: #2FCB88;
+        font-size: 28px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  .cashier-success-button {
+    margin-top: 48px;
+    width: 430px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(72, 209, 150, 1) 0%, rgba(0, 203, 116, 1) 100%);
+    border-radius: 64px;
+    color: #FFF;
+    font-size: 30px;
+    line-height: 100px;
+  }
+}
+
+.cashier-goods-wrapper {
+  min-height: 100%;
+  background-color: #F4F4F4;
+
+  .cashier-goods-goods {
+    padding: 24px 24px 38px 24px;
+
+    .cashier-goods-goods-wrapper {
+      padding: 36px;
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+
+      .cashier-goods-goods-title {
+        color: #606060;
+        font-size: 28px;
+        line-height: 40px;
+        border-bottom: 1px solid #D8D8D8;
+        padding-bottom: 28px;
+      }
+
+      .cashier-goods-goods-main {
+        padding-top: 34px;
+        padding-bottom: 28px;
+        margin-left: -20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .cashier-goods-goods-left {
+          display: flex;
+
+          .cashier-goods-goods-items-image {
+            margin-left: 20px;
+            width: 140px;
+            height: 140px;
+            background-color: #7f7f7f;
+            border-radius: 12px;
+            overflow: hidden;
+          }
+        }
+
+        .cashier-goods-goods-right {
+          color: #606060;
+          font-size: 24px;
+          line-height: 34px;
+        }
+      }
+
+      .cashier-goods-goods-coupon {
+        padding-top: 28px;
+        border-top: 1px solid #D8D8D8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .cashier-goods-goods-coupon-title {
+          color: #606060;
+          font-size: 24px;
+          line-height: 34px;
+        }
+
+        .cashier-goods-goods-coupon-name {
+          color: #2FCB88;
+          font-size: 30px;
+          line-height: 42px;
+        }
+      }
+    }
+  }
+
+  .cashier-goods-price {
+    padding: 6px 40px 28px 40px;
+    background-color: #fff;
+
+    .cashier-goods-price-item {
+      margin-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #0D0D0D;
+
+      &:last-child {
+        padding-bottom: 28px;
+      }
+
+      .cashier-goods-price-item-title {
+        font-size: 28px;
+        line-height: 40px;
+      }
+
+      .cashier-goods-price-item-price {
+        font-size: 30px;
+        line-height: 42px;
+        font-weight: bold;
+
+        &.special {
+          color: #FF5567;
+        }
+      }
+    }
+
+    .cashier-goods-price-total {
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      border-top: 1px solid #D8D8D8;
+
+      .cashier-goods-price-total-title {
+        color: #606060;
+        font-size: 24px;
+        line-height: 34px;
+      }
+
+      .cashier-goods-price-total-price {
+        margin-left: 14px;
+        font-weight: bold;
+        color: #FF5567;
+        font-size: 36px;
+        line-height: 50px;
+      }
+    }
+  }
+
+  .cashier-goods-button {
+    margin-top: 80px;
+    width: 590px;
+    height: 100px;
+    outline: none;
+    background: linear-gradient(135deg, rgba(72, 209, 150, 1) 0%, rgba(0, 203, 116, 1) 100%);
+    border-radius: 64px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 100px;
+    vertical-align: middle;
+  }
+}
