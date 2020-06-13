@@ -4,8 +4,8 @@ import { Button, View, Image } from '@tarojs/components';
 import './index.scss';
 import { wechat_icon, poster_icon } from './imgs';
 import { defaultPosterConfig } from "./canvasConfig";
-import PosterJs from "./wx-plugin-canvas/poster/poster";
-export default class ShareButton extends Component {
+import { CanvasDrawer } from "taro-plugin-canvas";
+export default class Index extends Component {
   constructor() {
     super(...arguments);
     this.state = {
@@ -13,7 +13,8 @@ export default class ShareButton extends Component {
       showPoster: false,
       transformData: null,
       posterImg: '',
-      posterConfig: defaultPosterConfig
+      posterConfig: defaultPosterConfig,
+      canvasStatus: false
     };
   }
   /**
@@ -96,14 +97,13 @@ export default class ShareButton extends Component {
       tempObj.images[2].url = transformData.qrcodeLink;
       this.setState({
         posterConfig: tempObj,
-        showModal: false
-      }, () => {
-        let poster = this.$scope.selectComponent("#poster");
-        PosterJs.create(true, poster);
+        showModal: false,
+        canvasStatus: true
       });
     }
   }
   posterGenerateSuccess(detail) {
+    console.log(detail);
     let { posterGenerateSuccess } = this.props;
     if (posterGenerateSuccess && typeof posterGenerateSuccess == 'function') {
       posterGenerateSuccess(detail);
@@ -111,8 +111,21 @@ export default class ShareButton extends Component {
       console.log('海报生成成功', detail);
     }
     this.setState({
-      posterImg: detail.detail,
+      posterImg: detail.tempFilePath,
       showPoster: true
+    });
+  }
+  posterGenerateFail(err) {
+    let { posterGenerateFail } = this.props;
+    if (posterGenerateFail && typeof posterGenerateFail == 'function') {
+      posterGenerateFail(err);
+    } else {
+      console.error(err);
+    }
+    this.setState({
+      showPoster: false,
+      showModal: false,
+      canvasStatus: false
     });
   }
   async onSavePoster() {
@@ -136,7 +149,7 @@ export default class ShareButton extends Component {
         // 打开设置
         const res1 = await Taro.openSetting();
         if (!res1.authSetting["scope.writePhotosAlbum"]) {
-          that.showToast('保存成功');
+          that.showToast('保存失败');
         } else {
           await Taro.saveImageToPhotosAlbum({
             filePath: posterImg
@@ -179,7 +192,7 @@ export default class ShareButton extends Component {
     return url;
   }
   render() {
-    const { showModal, showPoster, posterImg } = this.state;
+    const { showModal, showPoster, posterImg, canvasStatus } = this.state;
     return <View className="poster">
                 <View onClick={this.toShare.bind(this)}>
                     {this.props.children}
@@ -209,16 +222,17 @@ export default class ShareButton extends Component {
                                 <Button className="share_btn_item" open-type="share" style="border:2rpx solid rgba(47,203,136,1);color:rgba(47,203,136,1);">分享海报</Button>
                             </View>
                         </View>}
-                <plugin-poster class="poster-component" id="poster" config={posterConfig} onSuccess={this.posterGenerateSuccess.bind(this)} onFail={this.posterGenerateFail.bind(this)} />
+                {canvasStatus && <View className="canvas">
+                            <CanvasDrawer config={this.state.posterConfig} // 绘制配置
+        onCreateSuccess={this.posterGenerateSuccess.bind(this)} // 绘制成功回调
+        onCreateFail={this.posterGenerateFail.bind(this)} // 绘制失败回调
+        />
+                        </View>}
+                
             </View>;
   }
-  config = {
-    usingComponents: {
-      "plugin-poster": "./wx-plugin-canvas/poster/index" // 书写第三方组件的相对路径
-    }
-  };
 }
-ShareButton.defaultProps = {
+Index.defaultProps = {
   goodsPrice: 0.00,
   goodsPic: 'https://qqmylife-dev-1251517655.file.myqcloud.com/mch/att/201907301427/8JmUDPuPtu6jE1PSeQ2b6sNMYWlqakaAkJ7oxACw.png',
   goodsLinePrice: 0.00,

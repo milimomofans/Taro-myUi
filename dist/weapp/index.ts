@@ -19,4 +19,4 @@ export { default as WtCollectItem } from "./components/collect-item/index";
 export { default as WtCashier } from "./components/cashier/index";
 export { default as WtWithHistory } from "./components/with-history/with-history";
 export { default as WtLoadMore } from "./components/load-more/load-more";
-export { default as WtqmfxShareButton } from './components/shareButton/shareButton'
+export { default as WtqmfxShareButton } from './components/qmfxShareButton/shareButton'

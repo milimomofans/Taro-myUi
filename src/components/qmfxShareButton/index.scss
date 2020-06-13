@@ -69,10 +69,11 @@
     .poster-img{
         position: absolute;
         width:690rpx;
-        top:250rpx;
+        top:0;
         left:0;
         right:0;
-        margin:auto;
+        bottom: 0;
+        margin:50rpx auto;
     }
 }
 .share-btn{
@@ -93,4 +94,8 @@
     font-size:30rpx;
     font-weight: 500;
     background: rgba(255,255,255,1);
+}
+.canvas{
+    position: absolute;
+    bottom:99999px !important;
 }

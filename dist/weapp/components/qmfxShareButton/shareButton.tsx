@@ -1,9 +1,9 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { Button, View, Image } from '@tarojs/components'
+import { Button, View, Text, Image } from '@tarojs/components'
 import './index.scss'
 import { wechat_icon,poster_icon } from './imgs'
 import { defaultPosterConfig } from "./canvasConfig"
-import PosterJs from "./wx-plugin-canvas/poster/poster";
+import {CanvasDrawer} from "taro-plugin-canvas";
 
 
 interface PageStateProps {
@@ -23,9 +23,10 @@ interface PageState {
     transformData:any
     posterImg:string
     posterConfig:any
+    canvasStatus:boolean
 }
 
-export default class ShareButton extends Component <PageStateProps,PageState> {
+export default class Index extends Component <PageStateProps,PageState> {
     
     static defaultProps = {
         goodsPrice:0.00,
@@ -39,14 +40,8 @@ export default class ShareButton extends Component <PageStateProps,PageState> {
         showPoster:false,
         transformData:null,
         posterImg:'',
-        posterConfig:defaultPosterConfig
-    }
-
-
-    config:Config = {
-        usingComponents: {
-            "plugin-poster": "./wx-plugin-canvas/poster/index" // 书写第三方组件的相对路径
-        }
+        posterConfig:defaultPosterConfig,
+        canvasStatus:false
     }
     
     /**
@@ -144,15 +139,14 @@ export default class ShareButton extends Component <PageStateProps,PageState> {
 
             this.setState({
                 posterConfig:tempObj,
-                showModal:false
-            },()=>{
-                let poster = this.$scope.selectComponent("#poster")
-                PosterJs.create(true, poster)
+                showModal:false,
+                canvasStatus:true
             })
         }
     }
 
     posterGenerateSuccess(detail:any){ //海报生成成功回调
+        console.log(detail)
         let {posterGenerateSuccess} = this.props
         if(posterGenerateSuccess && typeof posterGenerateSuccess == 'function'){
             posterGenerateSuccess(detail)
@@ -160,8 +154,22 @@ export default class ShareButton extends Component <PageStateProps,PageState> {
             console.log('海报生成成功',detail)
         }
         this.setState({
-            posterImg:detail.detail,
+            posterImg:detail.tempFilePath,
             showPoster:true        
+        })
+    }
+
+    posterGenerateFail(err){
+        let {posterGenerateFail} = this.props
+        if(posterGenerateFail && typeof posterGenerateFail == 'function'){
+            posterGenerateFail(err)
+        }else{
+            console.error(err)
+        }
+        this.setState({
+            showPoster:false,
+            showModal:false,
+            canvasStatus:false
         })
     }
 
@@ -186,7 +194,7 @@ export default class ShareButton extends Component <PageStateProps,PageState> {
             // 打开设置
             const res1 = await Taro.openSetting();
             if (!res1.authSetting["scope.writePhotosAlbum"]) {
-                that.showToast('保存成功')     
+                that.showToast('保存失败')     
             } else {
               await Taro.saveImageToPhotosAlbum({
                 filePath: posterImg
@@ -234,7 +242,7 @@ export default class ShareButton extends Component <PageStateProps,PageState> {
     }
 
     render(){
-        const {showModal,showPoster,posterImg} = this.state
+        const {showModal,showPoster,posterImg,canvasStatus} = this.state
         return (
             <View className='poster'>
                 <View onClick={this.toShare.bind(this)}>
@@ -276,13 +284,18 @@ export default class ShareButton extends Component <PageStateProps,PageState> {
                         </View>
                     )
                 }
-                <plugin-poster
-                    class='poster-component'
-                    id='poster'
-                    config={posterConfig}
-                    onSuccess={this.posterGenerateSuccess.bind(this)}
-                    onFail={this.posterGenerateFail.bind(this)}
-                />
+                {
+                    canvasStatus && (
+                        <View className='canvas'>
+                            <CanvasDrawer
+                              config={this.state.posterConfig} // 绘制配置
+                              onCreateSuccess={this.posterGenerateSuccess.bind(this)} // 绘制成功回调
+                              onCreateFail={this.posterGenerateFail.bind(this)} // 绘制失败回调
+                            />
+                        </View>
+                    )
+                }
+                
             </View>
         )
     }
