@@ -1,0 +1,96 @@
+@mixin flexBox($a:center,$j:initial,$d:row){
+	display: flex;
+	align-items: $a;
+    justify-content: $j;
+    flex-direction: $d;
+}
+@mixin fontStyle($size:26rpx,$weight:500,$color:rgba(51,51,51,1)){
+	font-size:$size;
+	font-weight:$weight;
+	color:$color;
+}
+
+.content-share{
+    position: fixed;
+    width:100%;
+    height:100vh;
+    top:0;
+    background:rgba(13,13,13,0.6);
+}
+.content-share-main{
+    width:750rpx;
+    height:426rpx;
+    background:rgba(255,255,255,1);
+    border-radius:24px 24px 0px 0px;
+    position: absolute;
+    bottom: 0;
+    .title{
+        margin-top: 32rpx;
+        position: relative;
+        box-sizing: border-box;
+        @include fontStyle(32rpx);
+        text-align: center;
+        .cancel{
+            position: absolute;
+            right:32rpx;
+            top:0;
+            @include fontStyle(30rpx,500,rgba(172,172,172,1))
+        }
+    }
+    .share{
+        margin-top: 50rpx;
+        @include flexBox(center,space-around);
+        button{
+            background-color: rgba(255,255,255,1);
+            @include flexBox(center,center,column);
+            line-height: normal;
+            image{
+                width:110rpx;
+                height:110rpx;
+            }
+            view{
+                @include fontStyle(26rpx,500,rgba(96,96,96,1));
+                margin-top: 10rpx;
+            }
+            
+        }
+        button::after{
+            border:none
+        }
+        
+    }
+}
+.content-poster{
+    position: fixed;
+    width:100%;
+    height:100vh;
+    top:0;
+    background:rgba(13,13,13,0.6);
+    .poster-img{
+        position: absolute;
+        width:690rpx;
+        top:250rpx;
+        left:0;
+        right:0;
+        margin:auto;
+    }
+}
+.share-btn{
+    position: absolute;
+    bottom: 130rpx;
+    width:690rpx;
+    margin:auto;
+    left:0;
+    right: 0;
+    @include flexBox(center,center)
+}
+.share_btn_item{
+    @include flexBox(center,center);
+    width:336rpx;
+    height:90rpx;
+    border-radius:64rpx;
+    background:rgba(47,203,136,1);
+    font-size:30rpx;
+    font-weight: 500;
+    background: rgba(255,255,255,1);
+}

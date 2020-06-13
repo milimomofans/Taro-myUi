@@ -1,7 +1,7 @@
 import Nerv from "nervjs";
 import { Button, View, Image } from '@tarojs/components';
 import Taro, { Component } from "@tarojs/taro-h5";
-import TaroCanvasDrawer from "./taro-plugin-canvas/index";
+import TaroCanvasDrawer from './taro-plugin-canvas';
 import icons from './imgs';
 import './index.scss';
 import { defaultPosterConfig } from "./canvasConfig";
