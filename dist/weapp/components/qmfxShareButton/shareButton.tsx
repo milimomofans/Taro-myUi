@@ -3,7 +3,7 @@ import { Button, View, Text, Image } from '@tarojs/components'
 import './index.scss'
 import { wechat_icon,poster_icon } from './imgs'
 import { defaultPosterConfig } from "./canvasConfig"
-import {CanvasDrawer} from "taro-plugin-canvas";
+import CanvasDrawer from "./taro-plugin-canvas/index";
 
 
 interface PageStateProps {

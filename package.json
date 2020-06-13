@@ -1,12 +1,12 @@
 {
-  "name": "water-ui",
+  "name": "qmfxShareBtn",
   "version": "1.0.0",
   "private": true,
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
-  "description": "大渝网自用taro组件库",
+  "description": "全民分销分享组件",
   "templateInfo": {
     "name": "default",
     "typescript": true,

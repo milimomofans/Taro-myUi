@@ -4,7 +4,7 @@ import { Button, View, Image } from '@tarojs/components';
 import './index.scss';
 import { wechat_icon, poster_icon } from './imgs';
 import { defaultPosterConfig } from "./canvasConfig";
-import { CanvasDrawer } from "taro-plugin-canvas";
+import CanvasDrawer from "./taro-plugin-canvas/index";
 export default class Index extends Component {
   constructor() {
     super(...arguments);
