@@ -1,10 +1,30 @@
-import { Button, View } from '@tarojs/components'
+import { TransProps } from '@/Typings/index'
+import { Button, Text, View } from '@tarojs/components'
+import { inject, observer } from '@tarojs/mobx'
 import Taro, { Component, Config } from '@tarojs/taro'
+import { ComponentType } from 'react'
+import _ from 'dayjs'
+import './index.scss'
+import {WtqmfxShareButton} from 'qmfxShare'
 import api from '../../utils/api'
-import ShareButton from '../../components/shareButton/shareButton';
 
+interface PageStateProps extends TransProps {
+  counterStore: {
+    counter: number
+    increment: Function
+    decrement: Function
+    incrementAsync: Function
+    trans: (e) => {}
+  }
+}
 
-export default class Demo extends Component {
+interface Index {
+  props: PageStateProps
+}
+
+@inject('counterStore')
+@observer
+class Index extends Component {
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -13,20 +33,11 @@ export default class Demo extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    navigationBarTitleText: '分包页面',
-    disableScroll: true,
-    navigationStyle:'custom'
-  }
-
-  state = {
-    test:'123'
+    navigationBarTitleText: '首页'
   }
 
   componentWillMount() {
-    // api['poster|poster']().then(_r=>{
-    //   console.log(_r)
-    //  })
-    console.log(api)
+    console.log(_)
   }
 
   componentWillReact() {}
@@ -38,7 +49,27 @@ export default class Demo extends Component {
   componentDidShow() {}
 
   componentDidHide() {}
-  
+
+  increment = () => {
+    const { counterStore } = this.props
+    counterStore.increment()
+  }
+
+  decrement = () => {
+    const { counterStore } = this.props
+    counterStore.decrement()
+  }
+
+  incrementAsync = () => {
+    const { counterStore } = this.props
+    counterStore.incrementAsync()
+  }
+  changeLng = () => {
+    this.props.trans.changeLang('en')
+    this.forceUpdate()
+    // Taro.reLaunch({ url: '/pages/index/index' })
+  }
+
   onTransform(){
     let {test} = this.state
     return api['poster/poster']({goodsid:test})
@@ -60,10 +91,25 @@ export default class Demo extends Component {
 
   shareRef = {}
 
+
+  nav = () => {
+    Taro.navigateTo({ url: '/subPackageI18n/pages/i18n/i18n' })
+  }
   render() {
+    const {
+      counterStore: { counter }
+    } = this.props
+    console.log(this.props.counterStore)
     return (
       <View className='index'>
-        <ShareButton 
+        <Button onClick={this.increment}>+</Button>
+        <Button onClick={this.decrement}>-</Button>
+        <Button onClick={this.changeLng}>Add Async</Button>
+        <Button className='asdf' onClick={this.nav}>
+          跳转分包
+        </Button>
+        <Text>{counter}</Text>
+        <WtqmfxShareButton 
           onShareFunc={this.onTransform.bind(this)} 
           posterGenerateSuccess={this.onPosterGenerateSuccess.bind(this)}
           posterGenerateFail={this.onPosterGenerateFail.bind(this)}
@@ -74,9 +120,10 @@ export default class Demo extends Component {
           ref={ (node)=>{this.shareRef = node} }
         >
           <View>点击转链</View>
-        </ShareButton>
+        </WtqmfxShareButton>
       </View>
     )
   }
 }
 
+export default Index as ComponentType
