@@ -4,6 +4,7 @@ import { Image, View } from "@tarojs/components";
 import Taro, { Component } from "@tarojs/taro-h5";
 import bind from "bind-decorator";
 import icons from "./imgs";
+import '../../style/components/top-bar.scss';
 const { homeBlackIcon, homeWhiteIcon, backBlackIcon, backWhiteIcon } = icons;
 class TopBar extends Component {
   constructor() {

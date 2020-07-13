@@ -2,6 +2,7 @@ import Taro, { Component } from "@tarojs/taro";
 import { View, Text, Image } from "@tarojs/components";
 import classNames from 'classnames'
 import icon from "./imgs";
+import '../../style/components/empty.scss'
 
 interface Props {
   text?: string;

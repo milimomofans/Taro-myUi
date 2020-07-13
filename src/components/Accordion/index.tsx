@@ -15,6 +15,10 @@ interface PageState {
 
 export default class Accordion extends Component <Props,PageState> {
 
+    static defaultProps = {
+        keyName:'name'
+    }
+
     state = {
         isOpen:false
     }

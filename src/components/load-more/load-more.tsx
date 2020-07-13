@@ -1,6 +1,7 @@
 import Taro from "@tarojs/taro";
 import { Image, View } from "@tarojs/components";
 import { AtActivityIndicator } from "taro-ui";
+import '../../style/components/load-more.scss'
 
 interface Props {
   customStyle?: string;

@@ -4,6 +4,7 @@ import { ScrollView, View } from "@tarojs/components";
 // import { AtLoadMore } from "taro-ui"; // 之后看是否抄到water-ui里面
 import classNames from "classnames";
 import WtLoadMore from "../load-more/load-more";
+import '../../style/components/inifinite-scroll.scss';
 class InfiniteScroll extends Component {
   constructor(props) {
     super(props);

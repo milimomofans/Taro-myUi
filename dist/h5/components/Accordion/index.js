@@ -45,3 +45,6 @@ export default class Accordion extends Component {
             </View>;
   }
 }
+Accordion.defaultProps = {
+  keyName: 'name'
+};

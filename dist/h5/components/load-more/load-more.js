@@ -2,6 +2,7 @@ import Taro from "@tarojs/taro-h5";
 import Nerv from "nervjs";
 import { View } from "@tarojs/components";
 import { AtActivityIndicator } from "taro-ui";
+import '../../style/components/load-more.scss';
 export default class LoadMore extends Taro.Component {
   render() {
     const { customStyle, status } = this.props;
