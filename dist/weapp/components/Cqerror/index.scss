@@ -1,0 +1,37 @@
+@mixin fontStyle($s:26rpx,$w:500,$c:rgba(51,51,51,1)){
+    font-size:$s;
+    font-weight:$w;
+    color:$c;
+}
+@mixin flexBox($a:center,$j:initial){
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+}
+
+.__error_img{
+    width:400rpx;
+    display: block;
+    margin:auto;
+}
+.__error_title{
+    width: 50%;
+    @include flexBox(center,center);
+    @include fontStyle(50rpx,bold,rgba(102,102,102,1));
+    margin-top: 10rpx;
+    text-align: center;
+    margin:0 auto 40rpx auto;
+}
+.__error_btn{
+    margin-top: 20rpx;
+    display: block;
+    width: 430rpx;
+    height:76rpx;
+    background:linear-gradient(90deg,rgba(45,214,198,1) 0%,rgba(40,208,192,1) 100%);
+    border-radius:45rpx;
+    @include flexBox(center,center);
+    @include fontStyle(30rpx,400,rgba(255,255,255,1));
+}
+button::after{
+    border:none;
+}

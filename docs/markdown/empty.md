@@ -7,7 +7,7 @@
 :::demo
 
 ```js
-import { WtEmpty } from "water-ui";
+import { GlyEmpty } from "TaroGly";
 ```
 
 :::
@@ -17,7 +17,7 @@ import { WtEmpty } from "water-ui";
 :::demo
 
 ```scss
-@import "~water-ui/dist/style/components/empty.scss";
+@import "~TaroGly/dist/style/components/empty.scss";
 ```
 
 :::
@@ -29,10 +29,10 @@ import { WtEmpty } from "water-ui";
 - 该组件为受控组件
 
 ```
-<WtEmpty
+<GlyEmpty
   text='暂无数据'
   img='xxxxx'
-</WtEmpty>
+</GlyEmpty>
 ```
 
 ## 参数

@@ -1,7 +1,7 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "qmfxShareBtn",
-	"description": "全民分销分享组件",
+	"projectname": "water-ui-all",
+	"description": "大渝网自用taro组件库",
 	"appid": "wx6229351276783218",
 	"setting": {
 		"urlCheck": false,

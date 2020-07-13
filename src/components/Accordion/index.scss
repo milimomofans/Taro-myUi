@@ -1,0 +1,66 @@
+@mixin fontStyle($s:26rpx,$w:500,$c:rgba(51,51,51,1)){
+    font-size:$s;
+    font-weight:$w;
+    color:$c;
+}
+@mixin flexBox($a:center,$j:initial){
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+}
+@import "~taro-ui/dist/style/components/icon.scss";
+
+._Accordion{
+    position: relative;
+    width: 480rpx;
+    height:60rpx;
+}
+.options_main{
+    width: 480rpx;
+    height:360rpx;
+    border:2rpx solid rgba(221,221,221,1);
+    opacity:1;
+    border-radius:8rpx;
+    overflow: hidden;
+    transition: height .3s;
+    position: absolute;
+    z-index:101;
+}
+.options_close{
+    width: 480rpx;
+    height:60rpx;
+    border:2rpx solid rgba(221,221,221,1);
+    opacity:1;
+    border-radius:8rpx;
+    overflow: hidden;
+    transition: height .3s;
+    position: absolute;
+    z-index:101;
+}
+.open{
+    transform: rotate(180deg);
+    transition: all .3s;
+}
+.close{
+    transform: rotate(0deg);
+    transition:transform .3s;
+}
+.scroll-view{
+    height:300rpx;
+    position: relative;
+    z-index:101;
+    background: white;
+}
+.options_cur{
+    width: 100%;
+    height:60rpx;
+    padding:20rpx 20rpx 14rpx 16rpx;
+    box-sizing: border-box;
+    @include flexBox(center,space-between);
+    view:nth-of-type(1){
+        @include fontStyle(28rpx, bold, rgba(51,51,51,1));
+    }
+}
+.borderBottom{
+    border-bottom: 2rpx solid rgba(221,221,221,1);
+}

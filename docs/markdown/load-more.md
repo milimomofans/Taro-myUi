@@ -7,7 +7,7 @@
 :::demo
 
 ```js
-import { WtLoadMore } from "water-ui";
+import { GlyLoadMore } from "TaroGly";
 ```
 
 :::
@@ -17,7 +17,7 @@ import { WtLoadMore } from "water-ui";
 :::demo
 
 ```scss
-@import "~water-ui/dist/style/components/wt-load-more.scss";
+@import "~TaroGly/dist/style/components/wt-load-more.scss";
 @import '~taro-ui/dist/style/components/loading.scss';
 @import "~taro-ui/dist/style/components/activity-indicator.scss";
 
@@ -36,7 +36,7 @@ import { WtLoadMore } from "water-ui";
 - 该组件的父元素必须显式指定宽度
 
 ```
-<WtLoadMore
+<GlyLoadMore
   status='noLoading'
 />
 ```

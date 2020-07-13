@@ -1,0 +1,62 @@
+@mixin fontStyle($s:26rpx,$w:500,$c:rgba(51,51,51,1)){
+    font-size:$s;
+    font-weight:$w;
+    color:$c;
+}
+@mixin flexBox($a:center,$j:initial){
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+}
+._inputAccordition{
+    position: relative;
+    width: 490rpx;
+    height:60rpx;
+}
+.input_main{
+    width: 490rpx;
+    height:60rpx;
+    background:rgba(255,255,255,0);
+    border:2rpx solid rgba(221,221,221,1);
+    border-radius:8rpx;
+    transition: height .3s;
+    position: absolute;
+    z-index:100;
+}
+.showAll{
+    width: 490rpx;
+    height: 360rpx !important;
+    background:rgba(255,255,255,0);
+    border:2rpx solid rgba(221,221,221,1);
+    border-radius:8rpx;
+    transition: height .3s;
+    position: absolute;
+    z-index:100;
+}
+.input_style{
+    box-sizing: border-box;
+    @include fontStyle(28rpx,400,rgba(51,51,51,1));
+    width: 100%;
+    height:60rpx;
+    padding:10rpx 20rpx;
+    
+}
+.input_placeholder{
+    box-sizing: border-box;
+}
+.option_item{
+    width: 100%;
+    height:60rpx;
+    position: 10rpx 20rpx;
+    box-sizing: border-box;
+    @include fontStyle(28rpx,400,rgba(51,51,51,1));
+    @include flexBox();
+}
+.scroll_view{
+    padding:0 20rpx;
+    box-sizing: border-box;
+    height:300rpx;
+    position: relative;
+    z-index:100;
+    background: white;
+}

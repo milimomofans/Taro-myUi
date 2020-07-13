@@ -7,9 +7,9 @@
 :::demo
 
 ```js
-import { WtInfiniteScroll } from "water-ui";
+import { GlyInfiniteScroll } from "TaroGly";
 
-<WtInfiniteScroll
+<GlyInfiniteScroll
   isEmpty={isEmpty}
   loading={loading}
   hasMore={hasMore}
@@ -20,7 +20,7 @@ import { WtInfiniteScroll } from "water-ui";
   {list.map(item => (
     <Card data={item} />
   ))}
-</WtInfiniteScroll>;
+</GlyInfiniteScroll>;
 ```
 
 :::
@@ -30,7 +30,7 @@ import { WtInfiniteScroll } from "water-ui";
 :::demo
 
 ```scss
-@import "~water-ui/dist/style/components/inifinite-scroll.scss";
+@import "~TaroGly/dist/style/components/inifinite-scroll.scss";
 ```
 
 :::

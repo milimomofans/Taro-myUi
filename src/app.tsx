@@ -1,6 +1,5 @@
 import Taro, { Component, Config } from "@tarojs/taro";
 import "@tarojs/async-await";
-import {validateToken} from 'water-utils'
 import Index from "./pages/index";
 import "./app.scss";
 
@@ -22,7 +21,16 @@ class App extends Component {
   componentDidMount() {}
   config: Config = {
     pages: [
-      "pages/demo/index"
+      "pages/index/index",
+      "pages/navigation/topbar/index",
+      "pages/infinite-scroll/index",
+      "pages/share-button/index",
+      "pages/coupon-list/index",
+      "pages/coupon-select/index",
+      "pages/address/index",
+      'pages/collect-item/index',
+      "pages/cashier/index",
+      "pages/login-button/login-button"
     ],
     window: {
       backgroundTextStyle: "light",
@@ -32,7 +40,6 @@ class App extends Component {
     }
   };
   componentDidShow() {
-    validateToken()
   }
 
   componentDidHide() {}

@@ -7,7 +7,7 @@
 :::demo
 
 ```js
-import { WtTopBar } from "water-ui";
+import { GlyTopBar } from "TaroGly";
 
 // 黑色背景，白色按钮，文字
 <WtTopBar
@@ -25,7 +25,7 @@ import { WtTopBar } from "water-ui";
 :::demo
 
 ```scss
-@import "~water-ui/dist/style/components/top-bar.scss";
+@import "~TaroGly/dist/style/components/top-bar.scss";
 ```
 
 :::
