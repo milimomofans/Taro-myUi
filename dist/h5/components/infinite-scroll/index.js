@@ -20,7 +20,7 @@ class InfiniteScroll extends Component {
     return <ScrollView className={coverClass} scrollY scrollWithAnimation style={"height: 100vh;" + customStyle} scrollTop={0} lowerThreshold={lowerThreshold ? lowerThreshold : 80} onScrollToLower={this.onScrollToLower}>
         {showFiller && <View className="infinite-scroll-filler" />}
         {this.props.children}
-        {isEmpty && hasMore ? <View className="noData">
+        {isEmpty && !hasMore ? <View className="noData">
               <Image src={noDataIcon} mode="widthFix" />
               <View>暂无数据</View> 
             </View> : <WtLoadMore status={loading ? "loading" : "noLoading"} />}
