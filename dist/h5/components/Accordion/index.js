@@ -1,8 +1,8 @@
 import Nerv from "nervjs";
-import { Component } from "@tarojs/taro-h5";
+import Taro from "@tarojs/taro-h5";
 import { View, ScrollView } from '@tarojs/components';
 import classNames from 'classnames';
-export default class Accordion extends Component {
+export default class Accordion extends Taro.Component {
   constructor() {
     super(...arguments);
     this.state = {

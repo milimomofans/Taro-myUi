@@ -1,10 +1,10 @@
 import Nerv from "nervjs";
-import { Component } from "@tarojs/taro-h5";
+import Taro from "@tarojs/taro-h5";
 import { View, Text, Image } from "@tarojs/components";
 import classNames from 'classnames';
 import icon from "./imgs";
 import '../../style/components/empty.scss';
-export default class Empty extends Component {
+export default class Empty extends Taro.Component {
   render() {
     const { text, img, customClass, customStyle } = this.props;
     const emptyImg = img || icon.emptyIcon;

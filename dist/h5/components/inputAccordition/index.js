@@ -1,9 +1,9 @@
 import Nerv from "nervjs";
-import { Component } from "@tarojs/taro-h5";
+import Taro from "@tarojs/taro-h5";
 import { View, Input, ScrollView } from '@tarojs/components';
 import validate from './validator';
 import classNames from 'classnames';
-export default class Index extends Component {
+export default class Index extends Taro.Component {
   constructor() {
     super(...arguments);
     this.state = {

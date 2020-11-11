@@ -1,12 +1,12 @@
 import Nerv from "nervjs";
-import { Component } from "@tarojs/taro-h5";
+import Taro from "@tarojs/taro-h5";
 import { ScrollView, View, Image } from "@tarojs/components";
 // import { AtLoadMore } from "taro-ui"; // 之后看是否抄到water-ui里面
 import classNames from "classnames";
 import WtLoadMore from "../load-more/load-more";
 import '../../style/components/inifinite-scroll.scss';
 import { noDataIcon } from './imgs';
-class InfiniteScroll extends Component {
+class InfiniteScroll extends Taro.Component {
   constructor(props) {
     super(props);
   }

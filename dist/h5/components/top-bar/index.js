@@ -1,12 +1,12 @@
 import Nerv from "nervjs";
 import { __decorate } from "tslib";
 import { Image, View } from "@tarojs/components";
-import Taro, { Component } from "@tarojs/taro-h5";
+import Taro, { getSystemInfo as _getSystemInfo } from "@tarojs/taro-h5";
 import bind from "bind-decorator";
 import icons from "./imgs";
 import '../../style/components/top-bar.scss';
 const { homeBlackIcon, homeWhiteIcon, backBlackIcon, backWhiteIcon } = icons;
-class TopBar extends Component {
+class TopBar extends Taro.Component {
   constructor() {
     super(...arguments);
     this.state = { hasBack: true, statusBarHeight: 20 };
@@ -20,7 +20,7 @@ class TopBar extends Component {
       if (!prevPage) {
         this.setState({ hasBack: false });
       }
-      Taro.getSystemInfo().then(res => {
+      _getSystemInfo().then(res => {
         const statusBarHeight = res.statusBarHeight;
         this.setState({ statusBarHeight });
       });
@@ -40,7 +40,10 @@ class TopBar extends Component {
     if (this.props.onHome) {
       this.props.onHome();
     } else {
-      Taro.switchTab({ url: this.homePageUrl });
+      // Taro.switchTab({ url: this.homePageUrl });
+      Taro.reLaunch({
+        url: this.homePageUrl
+      });
     }
   }
   clickTitle() {

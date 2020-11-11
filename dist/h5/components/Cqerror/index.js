@@ -1,9 +1,9 @@
 import Nerv from "nervjs";
-import Taro, { Component } from "@tarojs/taro-h5";
+import Taro from "@tarojs/taro-h5";
 import { View, Image, Button } from '@tarojs/components';
 import './index.scss';
 import { errorIcon } from './img';
-export default class Index extends Component {
+export default class Index extends Taro.Component {
   onReload() {
     let { onCallBack } = this.props;
     if (onCallBack) {
