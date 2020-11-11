@@ -62,7 +62,7 @@ class TopBar extends Component<Props, State> {
   }
   appidMap = {};
   get homePageUrl(): string {
-    return '/pages/login/index';
+    return '/pages/home/index';
   }
   @bind
   goHome() {

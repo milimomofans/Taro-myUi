@@ -34,7 +34,7 @@ class TopBar extends Taro.Component {
     }
   }
   get homePageUrl() {
-    return '/pages/login/index';
+    return '/pages/home/index';
   }
   goHome() {
     if (this.props.onHome) {
