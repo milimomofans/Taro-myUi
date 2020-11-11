@@ -69,7 +69,10 @@ class TopBar extends Component<Props, State> {
     if (this.props.onHome) {
       this.props.onHome();
     } else {
-      Taro.switchTab({ url: this.homePageUrl });
+      // Taro.switchTab({ url: this.homePageUrl });
+      Taro.reLaunch({
+        url: this.homePageUrl
+      })
     }
   }
 
