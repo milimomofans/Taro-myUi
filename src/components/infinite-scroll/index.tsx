@@ -61,7 +61,7 @@ class InfiniteScroll extends Component<ComponentProps> {
         {showFiller && <View className="infinite-scroll-filler" />}
         {this.props.children}
         {
-          isEmpty && !hasMore ? (
+          isEmpty && !hasMore && !loading ? (
             <View className="noData">
               <Image src={noDataIcon} mode='widthFix'/>
               <View>暂无数据</View> 

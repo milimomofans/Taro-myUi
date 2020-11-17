@@ -11,7 +11,7 @@ export default class LoadMore extends Taro.Component {
       {status === "loading" && <View>
           <AtActivityIndicator isOpened />
         </View>}
-      {status === "noLoading" && <View className="noMore">没有更多了...</View>}
+      {status === "noLoading" && <View className="noMore">已经到底啦</View>}
     </View>;
   }
 
