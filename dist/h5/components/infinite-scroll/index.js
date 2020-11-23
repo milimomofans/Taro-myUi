@@ -14,7 +14,7 @@ class InfiniteScroll extends Taro.Component {
     this.props.onScrollToLower();
   }
   render() {
-    const { isEmpty, loading, hasMore, customClass, showFiller, lowerThreshold, showBtmFiller } = this.props;
+    const { isEmpty, loading, hasMore, customClass, showFiller, lowerThreshold, pageNo, moreTitle, noMoreStyle } = this.props;
     const coverClass = classNames([customClass, "scrollview"]);
     const customStyle = this.props.customStyle || "";
     return <ScrollView className={coverClass} scrollY scrollWithAnimation style={"height: 100vh;" + customStyle} scrollTop={0} lowerThreshold={lowerThreshold ? lowerThreshold : 80} onScrollToLower={this.onScrollToLower}>
@@ -23,12 +23,14 @@ class InfiniteScroll extends Taro.Component {
         {isEmpty && !hasMore && !loading ? <View className="noData">
               <Image src={noDataIcon} mode="widthFix" />
               <View>暂无数据</View> 
-            </View> : <WtLoadMore status={loading ? "loading" : "noLoading"} />}
+            </View> : !loading && pageNo > 1 && <WtLoadMore status={loading ? "loading" : "noLoading"} customStyle={noMoreStyle} noMoreTitle={moreTitle} />}
       </ScrollView>;
   }
 }
 InfiniteScroll.defaultProps = {
-  showFiller: false
+  showFiller: false,
+  moreTitle: '已经到底啦',
+  pageNo: 1
 };
 InfiniteScroll.options = {
   addGlobalClass: true

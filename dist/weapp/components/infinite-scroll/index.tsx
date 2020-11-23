@@ -10,9 +10,12 @@ interface ComponentProps {
   isEmpty: boolean;
   loading: boolean;
   hasMore: boolean;
+  moreTitle?:string;
   customStyle?: any;
   customClass?: string;
   lowerThreshold?: number;
+  pageNo:number;
+  noMoreStyle?:any;
   onScrollToLower: () => void;
   showFiller?: boolean;
   showBtmFiller?: boolean;
@@ -21,7 +24,9 @@ interface ComponentProps {
 
 class InfiniteScroll extends Component<ComponentProps> {
   static defaultProps = {
-    showFiller: false
+    showFiller: false,
+    moreTitle: '已经到底啦',
+    pageNo:1
   };
 
   constructor(props) {
@@ -44,7 +49,9 @@ class InfiniteScroll extends Component<ComponentProps> {
       customClass,
       showFiller,
       lowerThreshold,
-      showBtmFiller
+      pageNo,
+      moreTitle,
+      noMoreStyle
     } = this.props;
     const coverClass = classNames([customClass, "scrollview"]);
     const customStyle = this.props.customStyle || "";
@@ -66,8 +73,8 @@ class InfiniteScroll extends Component<ComponentProps> {
               <Image src={noDataIcon} mode='widthFix'/>
               <View>暂无数据</View> 
             </View>
-          ) : (
-            <WtLoadMore status={loading ? "loading" : "noLoading"} />
+          ) : !loading && pageNo > 1 &&(
+            <WtLoadMore status={loading ? "loading" : "noLoading"} customStyle={noMoreStyle}  noMoreTitle={moreTitle}/>
           )
         }
       </ScrollView>

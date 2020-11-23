@@ -5,19 +5,20 @@ import { AtActivityIndicator } from "taro-ui";
 import '../../style/components/load-more.scss';
 export default class LoadMore extends Taro.Component {
   render() {
-    const { customStyle, status } = this.props;
+    const { customStyle, status, noMoreTitle } = this.props;
 
     return <View className="load-more-wrapper" style={customStyle}>
       {status === "loading" && <View>
           <AtActivityIndicator isOpened />
         </View>}
-      {status === "noLoading" && <View className="noMore">已经到底啦</View>}
+      {status === "noLoading" && <View className="noMore">{noMoreTitle}</View>}
     </View>;
   }
 
 }
 LoadMore.defaultProps = {
-  status: "noLoading"
+  status: "noLoading",
+  noMoreTitle: "已经到底啦"
 };
 LoadMore.options = {
   addGlobalClass: true
