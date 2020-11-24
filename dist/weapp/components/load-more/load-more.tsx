@@ -21,7 +21,7 @@ export default function LoadMore({
           <AtActivityIndicator isOpened />
         </View>
       )}
-      {status === "noLoading" && <View className='noMore'>{noMoreTitle}</View>}
+      {/* {status === "noLoading" && <View className='noMore'>{noMoreTitle}</View>} */}
     </View>
   );
 }
