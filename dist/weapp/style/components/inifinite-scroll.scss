@@ -50,7 +50,13 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top:200rpx;
+  margin:auto;
+  position: absolute;
+  height: 200rpx;
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
   image{
     width: 150rpx;
     margin-bottom: 12rpx;

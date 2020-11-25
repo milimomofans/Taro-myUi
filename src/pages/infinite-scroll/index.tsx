@@ -37,7 +37,7 @@ export default class Index extends Component {
         res({
           currentPage:page,
           data:initData.map(v=>''+page+v),
-          lastPage:10
+          lastPage:5
         })
         clearTimeout(timer)
       }, 1000);
@@ -45,9 +45,12 @@ export default class Index extends Component {
     return promise
   }
   async getMoreData(){
-    this.setState({page:this.state.page+1},()=>{
-      this.getData(this.state.page+1)
-    })
+    if (this.state.hasMore) {
+      this.setState({page:this.state.page+1},()=>{
+        this.getData(this.state.page+1)
+      })
+    }
+   
   }
   async getData(page:number) {
     if(!this.state.hasMore)return
@@ -55,6 +58,7 @@ export default class Index extends Component {
     try {
       const {currentPage, lastPage, data} = await this.returnData(page)
       const newData = [...this.state.data, ...data]
+      // const newData = []
       const hasMore = currentPage < lastPage
       const isEmpty = newData.length === 0
       this.setState({loading:false, isEmpty, hasMore, data:newData})
@@ -68,17 +72,22 @@ export default class Index extends Component {
     const {data, hasMore, loading, isEmpty}= this.state
     return (
       <View className="index">
+        <View style='height:50vh'>我是吸顶的头部</View>
         <WtInfiniteScroll
           hasMore={hasMore}
           loading={loading}
           isEmpty={isEmpty}
           onScrollToLower={this.getMoreData.bind(this)}
+          noMoreTitle='暂无更多数据了哦'
+          pageNo={this.state.page}
+          customStyle='height:50vh !important'
           noWl={true}
         >
         <View className="sdf">配合utils中的pagination使用更佳</View>
-        {
+        {/* {
           data.map(item=><View className="item" key={item}>{item}</View>)
-        }</WtInfiniteScroll>
+        } */}
+        </WtInfiniteScroll>
       </View>
     );
   }

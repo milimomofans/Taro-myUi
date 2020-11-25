@@ -11,6 +11,7 @@ interface ComponentProps {
   loading: boolean;
   hasMore: boolean;
   moreTitle?:string;
+  noMoreTitle?:string;
   customStyle?: any;
   customClass?: string;
   lowerThreshold?: number;
@@ -26,8 +27,10 @@ class InfiniteScroll extends Component<ComponentProps> {
   static defaultProps = {
     showFiller: false,
     moreTitle: '已经到底啦',
-    pageNo:1
+    pageNo:1,
+    noMoreTitle: '暂无数据'
   };
+
 
   constructor(props) {
     super(props);
@@ -51,12 +54,14 @@ class InfiniteScroll extends Component<ComponentProps> {
       lowerThreshold,
       pageNo,
       moreTitle,
-      noMoreStyle
+      noMoreStyle,
+      noMoreTitle
     } = this.props;
     const coverClass = classNames([customClass, "scrollview"]);
     const customStyle = this.props.customStyle || "";
     return (
       <ScrollView
+        id="_scrollView"
         className={coverClass}
         scrollY
         scrollWithAnimation
@@ -71,7 +76,7 @@ class InfiniteScroll extends Component<ComponentProps> {
           isEmpty && !hasMore && !loading ? (
             <View className="noData">
               <Image src={noDataIcon} mode='widthFix'/>
-              <View>暂无数据</View> 
+              <View>{noMoreTitle}</View> 
             </View>
           ) : !loading && pageNo > 1 &&(
             <WtLoadMore status={loading ? "loading" : "noLoading"} customStyle={noMoreStyle}  noMoreTitle={moreTitle}/>
