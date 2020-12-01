@@ -22,6 +22,7 @@ class App extends Component {
   config: Config = {
     pages: [
       "pages/infinite-scroll/index",
+      "pages/actionDemo/index"
     ],
     window: {
       backgroundTextStyle: "light",

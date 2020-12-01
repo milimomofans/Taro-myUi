@@ -29,7 +29,7 @@ class TopBar extends Component<Props, State> {
   static options = { addGlobalClass: true };
   static defaultProps = {
     showBack: true,
-    showHome: true,
+    showHome: false,
     showTitle: true,
     showFilter: true,
     showChildren: false,

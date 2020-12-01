@@ -75,7 +75,7 @@ class TopBar extends Taro.Component {
 TopBar.options = { addGlobalClass: true };
 TopBar.defaultProps = {
   showBack: true,
-  showHome: true,
+  showHome: false,
   showTitle: true,
   showFilter: true,
   showChildren: false,
