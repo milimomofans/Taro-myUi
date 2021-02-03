@@ -1,0 +1,48 @@
+.goods_main{
+    width:325rpx;
+    border-radius: 8rpx;
+    background: white;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.goods_image{
+    width: 325rpx;
+    height:325rpx;
+    border-radius: 8rpx 8rpx 0 0;
+}
+.goods_name{
+    font-size: 28rpx;
+    font-weight: bold;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.goods_tags{
+    margin-top:10rpx;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.goods_tag_item{
+    padding:5rpx 10rpx;
+    font-size: 23rpx;
+    border:1rpx solid #666;
+    margin-right: 8rpx;
+}
+.goods_price{
+    display: flex;
+    align-items: flex-end;
+    .goods_price_style{
+        font-size:26rpx;
+        margin-right: 8rpx;
+        color:red;
+    }
+    .goods_fullPrice_style{
+        font-size: 22rpx;
+        text-decoration: line-through;
+    }
+}

@@ -12,6 +12,7 @@ interface ComponentProps {
   hasMore: boolean;
   moreTitle?:string;
   noMoreTitle?:string;
+  noMorePic?:string;
   customStyle?: any;
   customClass?: string;
   lowerThreshold?: number;
@@ -59,6 +60,7 @@ class InfiniteScroll extends Component<ComponentProps> {
     } = this.props;
     const coverClass = classNames([customClass, "scrollview"]);
     const customStyle = this.props.customStyle || "";
+    const noMorePic = this.props.noMorePic || noDataIcon
     return (
       <ScrollView
         id="_scrollView"
@@ -75,7 +77,7 @@ class InfiniteScroll extends Component<ComponentProps> {
         {
           isEmpty && !hasMore && !loading ? (
             <View className="noData">
-              <Image src={noDataIcon} mode='widthFix'/>
+              <Image src={noMorePic} mode='widthFix'/>
               <View>{noMoreTitle}</View> 
             </View>
           ) : !loading && pageNo > 1 &&(

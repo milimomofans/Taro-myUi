@@ -1,0 +1,37 @@
+export default [
+    {
+        name:'非卖商品1233333非卖商品1233333',
+        tags:['精选','热卖','折扣优惠'],
+        image:'https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=new%20game%E5%9B%BE%E7%89%87&hs=2&pn=2&spn=0&di=128380&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=1968958415%2C205286327&os=3976145966%2C1247827009&simid=4133473682%2C705537573&adpicid=0&lpn=0&ln=30&fr=ala&fm=&sme=&cg=&bdtype=15&oriquery=new%20game%E5%9B%BE%E7%89%87&objurl=https%3A%2F%2Fgimg2.baidu.com%2Fimage_search%2Fsrc%3Dhttp%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201808%2F23%2F20180823203739_gvstm.png%26refer%3Dhttp%3A%2F%2Fb-ssl.duitang.com%26app%3D2002%26size%3Df9999%2C10000%26q%3Da80%26n%3D0%26g%3D0n%26fmt%3Djpeg%3Fsec%3D1611996088%26t%3D26eb31812a1ba76090fce42d4036ffd2&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3B17tpwg2_z%26e3Bv54AzdH3Fks52AzdH3F%3Ft1%3Dlbd89baaa&gsm=3&islist=&querylist=',
+        price:'1.00',
+        fullPrice:'2.00'
+    },
+    {
+        name:'测试测试测试测试测试测试测试测试测试测试测试测试测试测试',
+        tags:[],
+        image:'https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=new%20game%E5%9B%BE%E7%89%87&hs=2&pn=3&spn=0&di=134200&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=4035811962%2C1913892560&os=3499637808%2C4101242107&simid=3284740932%2C4127625051&adpicid=0&lpn=0&ln=30&fr=ala&fm=&sme=&cg=&bdtype=0&oriquery=new%20game%E5%9B%BE%E7%89%87&objurl=https%3A%2F%2Fgimg2.baidu.com%2Fimage_search%2Fsrc%3Dhttp%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201507%2F12%2F20150712184141_UTPWm.png%26refer%3Dhttp%3A%2F%2Fc-ssl.duitang.com%26app%3D2002%26size%3Df9999%2C10000%26q%3Da80%26n%3D0%26g%3D0n%26fmt%3Djpeg%3Fsec%3D1611996088%26t%3Ddb12cce4ad6d68e9494336b9fa84aeee&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3B17tpwg2_z%26e3Bv54AzdH3Fks52AzdH3F%3Ft1%3Dma98aa8mb&gsm=3&islist=&querylist=',
+        price:'333.00',
+        fullPrice:'2.00'
+    },
+    {
+        name:'测试测试测试1233333',
+        tags:['折扣优惠'],
+        image:'https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=new%20game%E5%9B%BE%E7%89%87&hs=2&pn=4&spn=0&di=67440&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=2446936557%2C1161372437&os=3001314077%2C2127227159&simid=3566969984%2C496842786&adpicid=0&lpn=0&ln=30&fr=ala&fm=&sme=&cg=&bdtype=15&oriquery=new%20game%E5%9B%BE%E7%89%87&objurl=https%3A%2F%2Fgimg2.baidu.com%2Fimage_search%2Fsrc%3Dhttp%3A%2F%2Fhbimg.b0.upaiyun.com%2Feaaa5a37be9e684f47775aa9b2550606bc0c1c62b053d-9hvhC8_fw658%26refer%3Dhttp%3A%2F%2Fhbimg.b0.upaiyun.com%26app%3D2002%26size%3Df9999%2C10000%26q%3Da80%26n%3D0%26g%3D0n%26fmt%3Djpeg%3Fsec%3D1611996088%26t%3D445aa3aa28bb850a11d004d1c77eac7f&fromurl=ippr_z2C%24qAzdH3FAzdH3Fi7wkwg_z%26e3Bv54AzdH3FrtgfAzdH3Flbbbda808AzdH3F&gsm=3&islist=&querylist=',
+        price:'6123.00',
+        fullPrice:'2.00'
+    },
+    {
+        name:'测试瀑布流3333333',
+        tags:[],
+        image:'https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=new%20game%E5%9B%BE%E7%89%87&hs=2&pn=6&spn=0&di=74030&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=4008043236%2C2023694431&os=925526396%2C615277503&simid=3434205501%2C257369946&adpicid=0&lpn=0&ln=30&fr=ala&fm=&sme=&cg=&bdtype=0&oriquery=new%20game%E5%9B%BE%E7%89%87&objurl=https%3A%2F%2Fgimg2.baidu.com%2Fimage_search%2Fsrc%3Dhttp%3A%2F%2Fhbimg.b0.upaiyun.com%2F555e70d53c00674183ad2589faf8557b5b2a164a19089-TG183w_fw658%26refer%3Dhttp%3A%2F%2Fhbimg.b0.upaiyun.com%26app%3D2002%26size%3Df9999%2C10000%26q%3Da80%26n%3D0%26g%3D0n%26fmt%3Djpeg%3Fsec%3D1611996088%26t%3Db9ca2508510270899987d7d7122a6bfe&fromurl=ippr_z2C%24qAzdH3FAzdH3Fi7wkwg_z%26e3Bv54AzdH3FrtgfAzdH3F8m088mnablAzdH3F&gsm=3&islist=&querylist=',
+        price:'55.00',
+        fullPrice:'2.00'
+    },
+    {
+        name:'瀑布流',
+        tags:['精选'],
+        image:'https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=new%20game%E5%9B%BE%E7%89%87&hs=2&pn=7&spn=0&di=770&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=2900316619%2C1757121212&os=2649605492%2C601215074&simid=3441498370%2C456820041&adpicid=0&lpn=0&ln=30&fr=ala&fm=&sme=&cg=&bdtype=0&oriquery=new%20game%E5%9B%BE%E7%89%87&objurl=https%3A%2F%2Fgss0.baidu.com%2F70cFfyinKgQFm2e88IuM_a%2Fbaike%2Fpic%2Fitem%2F574e9258d109b3deed6ffadbc6bf6c81810a4cb4.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fkwthj_z%26e3Bkwt17_z%26e3Bv54AzdH3Ftpj4AzdH3FNEW%25daGAME%25d8AzdH3F8mcm0m9m&gsm=3&islist=&querylist=',
+        price:'3.00',
+        fullPrice:'2.00'
+    },
+]

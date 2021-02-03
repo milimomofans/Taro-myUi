@@ -1,6 +1,7 @@
 import Taro, { Component, Config } from "@tarojs/taro";
 import { View } from "@tarojs/components";
 import { WtInfiniteScroll } from "water-ui";
+import classNames from 'classnames'
 import "./index.scss";
 
 export default class Index extends Component {
@@ -84,9 +85,20 @@ export default class Index extends Component {
           noWl={true}
         >
         <View className="sdf">配合utils中的pagination使用更佳</View>
-        {/* {
-          data.map(item=><View className="item" key={item}>{item}</View>)
-        } */}
+        <View className='main'>
+          {
+            data.map((item,index)=>
+              <View 
+                className={
+                  classNames('item',index % 2 == 0 && 'item0',item % 3 == 0 && 'item1',item % 5 == 0 && 'item2',item % 7 == 0 && 'item3')
+                }  
+                key={item}
+              >
+                {item}
+              </View>
+            )
+          }
+        </View>
         </WtInfiniteScroll>
       </View>
     );

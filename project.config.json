@@ -74,9 +74,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "pages/actionDemo/index",
 					"pathName": "pages/actionDemo/index",
+					"query": "",
 					"scene": null
 				}
 			]

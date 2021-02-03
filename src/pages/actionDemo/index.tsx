@@ -1,33 +1,51 @@
 import Taro, { Component, Config } from "@tarojs/taro";
 import { View } from "@tarojs/components";
-import DEMO from '../../components/demo/index'
+import WaterFull from '../../components/waterFull/index'
+import MockData from '../../mock/listMock' 
 
 export default class Demo extends Component {
     
     state = {
-        markData:[1,2,3,4,5,6,7,8]
+        list:[],
+        loading:false
+    }
+
+    componentDidMount(){
+        this.getList()
+    }
+
+    getList(){
+        this.setState({
+            loading:true
+        },()=>{
+            setTimeout(() => {
+                let {list} = this.state
+                this.setState({
+                    list:[...list,...MockData],
+                    loading:false
+                })
+            }, 1000);
+        })
+      
+    }
+
+
+    onReachBottom(){
+        if (!this.state.loading) {
+            this.getList()
+        }
     }
     
-    testCallback(item){
-        return (
-            <View>{item}</View>
-        )
-    }
 
     render(){
         const {
-            markData
+            list
         } = this.state
         return (
             <View>
-                {/* {
-                    markData.map((item,index)=>{
-                        return (
-                            <View >{item}</View>
-                        )
-                    })
-                } */}
-                <DEMO list={markData} onJSXcallback={this.testCallback}></DEMO>
+                <WaterFull
+                    goodsList={list}
+                ></WaterFull>
             </View>
         )
     }

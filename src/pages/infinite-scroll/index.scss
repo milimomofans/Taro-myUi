@@ -1,3 +1,29 @@
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-count:2;
+	/* Firefox */
+        -webkit-column-count:2;
+	/* Safari 和 Chrome */
+        column-count:2;
+	-moz-column-gap:1em;
+	-webkit-column-gap:1em;
+	column-gap:1em;
+}
 .item {
+  width: 200rpx;
   height: 180px;
+  border:1rpx solid #666;
+}
+.item0{
+  height:300rpx; 
+}
+.item1{
+  height:250rpx;
+}
+.item2{
+  height:550rpx
+}
+.item3{
+  height:600rpx;
 }

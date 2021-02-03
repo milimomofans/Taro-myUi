@@ -17,11 +17,12 @@ class InfiniteScroll extends Taro.Component {
     const { isEmpty, loading, hasMore, customClass, showFiller, lowerThreshold, pageNo, moreTitle, noMoreStyle, noMoreTitle } = this.props;
     const coverClass = classNames([customClass, "scrollview"]);
     const customStyle = this.props.customStyle || "";
+    const noMorePic = this.props.noMorePic || noDataIcon;
     return <ScrollView id="_scrollView" className={coverClass} scrollY scrollWithAnimation style={"height: 100vh;" + customStyle} scrollTop={0} lowerThreshold={lowerThreshold ? lowerThreshold : 80} onScrollToLower={this.onScrollToLower}>
         {showFiller && <View className="infinite-scroll-filler" />}
         {this.props.children}
         {isEmpty && !hasMore && !loading ? <View className="noData">
-              <Image src={noDataIcon} mode="widthFix" />
+              <Image src={noMorePic} mode="widthFix" />
               <View>{noMoreTitle}</View> 
             </View> : !loading && pageNo > 1 && <WtLoadMore status={loading ? "loading" : "noLoading"} customStyle={noMoreStyle} noMoreTitle={moreTitle} />}
       </ScrollView>;
