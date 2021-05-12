@@ -159,7 +159,7 @@
     "nervjs": "1.4.3",
     "node-fs-extra": "^0.8.2",
     "ora": "^3.0.0",
-    "postcss": "^7.0.2",
+    "postcss": "^8.2.10",
     "postcss-loader": "^2.1.6",
     "qrcode.react": "^0.8.0",
     "react-markdown-loader": "^1.1.14",
